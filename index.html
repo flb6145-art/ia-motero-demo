@@ -27,3 +27,6 @@ function importRoute(e){let f=e.target.files[0];if(!f)return;let rd=new FileRead
 function dist(a,b){let R=6371000,rad=x=>x*Math.PI/180,dLat=rad(b[1]-a[1]),dLon=rad(b[0]-a[0]),v=Math.sin(dLat/2)**2+Math.cos(rad(a[1]))*Math.cos(rad(b[1]))*Math.sin(dLon/2)**2;return 2*R*Math.asin(Math.sqrt(v))}
 function openAppleMaps(){let inputs=[...document.querySelectorAll('#points input')].map(x=>x.value.trim()).filter(Boolean);if(inputs.length<2){setStatus('routeStatus','Introduce destino primero.');return}let dest=encodeURIComponent(inputs[inputs.length-1]);location.href='https://maps.apple.com/?daddr='+dest+'&dirflg=d'}
 function voiceInput(){let SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){setStatus('routeStatus','El reconocimiento de voz no está disponible aquí. Usa el micrófono del teclado del iPhone.');return}let rec=new SR();rec.lang='es-ES';rec.onresult=e=>{let inputs=document.querySelectorAll('#points input');inputs[inputs.length-1].value=e.results[0][0].transcript;setStatus('routeStatus','Destino dictado: '+e.results[0][0].transcript)};rec.onerror=()=>setStatus('routeStatus','No se pudo reconocer la voz.');rec.start()}
+</script>
+</body>
+</html>
