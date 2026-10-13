@@ -1,0 +1,12 @@
+{
+  "name": "IA MOTERO · Rutas y GPS",
+  "short_name": "IA MOTERO",
+  "description": "Planificador de rutas moteras con ubicación GPS, cálculo de rutas e importación/exportación de tracks.",
+  "lang": "es-ES",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0d120f",
+  "theme_color": "#101713"
+}

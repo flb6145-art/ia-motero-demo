@@ -1,0 +1,30 @@
+IA MOTERO — paquete PWA para iPhone
+===================================
+
+QUÉ ES
+Este paquete contiene una aplicación web progresiva (PWA) de prueba. Usa un mapa real de OpenStreetMap, la geolocalización del navegador cuando se concede permiso, el servicio público OSRM para calcular rutas y herramientas de importación/exportación de rutas.
+
+IMPORTANTE: no es todavía un navegador motero terminado. La navegación giro a giro automática, el recálculo al desviarse, el funcionamiento GPS fiable en segundo plano y la optimización real de curvas/evitación de autopistas siguen pendientes. Los servicios públicos pueden limitarse y necesitan conexión a internet. No utilizar el teléfono en la mano mientras se conduce.
+
+CÓMO PUBLICARLA DESDE EL IPHONE (sin ordenador)
+La geolocalización del navegador requiere una dirección HTTPS. No basta con abrir index.html desde Archivos.
+
+Opción sencilla: GitHub Pages
+1. En Safari, entra en https://github.com y crea una cuenta o inicia sesión.
+2. Crea un repositorio nuevo llamado ia-motero-demo. Puedes dejarlo público para esta demo.
+3. En el repositorio, pulsa Add file / Upload files y sube los tres archivos de esta carpeta: index.html, manifest.webmanifest y sw.js.
+4. En Settings → Pages, selecciona Deploy from a branch, elige la rama main y la carpeta / (root), y guarda.
+5. Espera a que GitHub publique el sitio. La dirección será parecida a https://TU-USUARIO.github.io/ia-motero-demo/.
+6. Abre esa dirección en Safari en el iPhone. Pulsa “Activar GPS real” y permite el acceso a la ubicación.
+7. Para añadirla a la pantalla de inicio: botón Compartir de Safari → Añadir a pantalla de inicio.
+
+La interfaz y las rutas dependen de servicios externos; la instalación en pantalla de inicio no convierte por sí sola esta PWA en una app nativa ni garantiza GPS en segundo plano.
+
+PRUEBAS RECOMENDADAS
+- Con buena conexión y permiso de ubicación, comprobar que la posición cambia al desplazarse.
+- Probar origen/destino y comparar la ruta calculada con la señalización real.
+- Probar importación GPX/KML/TCX/GeoJSON y exportación GPX.
+- No confiar en el prototipo para instrucciones críticas ni en condiciones de mala cobertura.
+
+PRIVACIDAD
+Esta demo no incorpora una cuenta ni un backend propio. Las búsquedas de lugares se envían a Nominatim y el cálculo de rutas a OSRM; el mapa carga teselas de OpenStreetMap. Antes de distribuirla públicamente o cobrar suscripciones, habrá que revisar las condiciones de uso de los servicios, añadir política de privacidad y seleccionar proveedores adecuados.
